@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionHelper {
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/categories";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:8888/java_asm";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
 

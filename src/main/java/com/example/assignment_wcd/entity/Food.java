@@ -1,6 +1,7 @@
 package com.example.assignment_wcd.entity;
 
 import com.example.assignment_wcd.entity.base.BaseEntity;
+import com.example.assignment_wcd.entity.myenum.FoodStatus;
 
 import java.time.LocalDateTime;
 
@@ -11,19 +12,21 @@ public class Food extends BaseEntity {
     private String description;
     private String avatar;
     private String price;
-    private LocalDateTime startDate;
 
-    public Food(int id, String nameFood, Category categoryid, String description, String avatar, String price, LocalDateTime startDate) {
+    public Food(int id, String nameFood, Category categoryid, String description, String avatar, String price) {
         this.id = id;
         this.nameFood = nameFood;
         Categoryid = categoryid;
         this.description = description;
         this.avatar = avatar;
         this.price = price;
-        this.startDate = startDate;
+
     }
 
-    public Food() {
+    public Food(String namefood, String categoryid, String description, String avatar, Double price) {
+    }
+
+    public Food(int id, String nameFood, String avatar, Double price, String description, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, int createdBy, int updatedBy, int deletedBy, FoodStatus foodStatus) {
     }
 
     public int getId() {
@@ -42,7 +45,7 @@ public class Food extends BaseEntity {
         this.nameFood = nameFood;
     }
 
-    public Category getCategoryid() {
+    public String getCategoryid() {
         return Categoryid;
     }
 
@@ -66,19 +69,11 @@ public class Food extends BaseEntity {
         this.avatar = avatar;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
     }
 }

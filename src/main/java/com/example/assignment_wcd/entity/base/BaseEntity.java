@@ -13,6 +13,16 @@ public abstract class BaseEntity {
     private int deletedBy;
     public FoodStatus status;
 
+    public BaseEntity() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        this.deletedAt = LocalDateTime.now();
+        this.createdBy = 1;
+        this.updatedBy = 1;
+        this.deletedBy = 1;
+        this.status = FoodStatus.ACTIVE;
+    }
+
     public BaseEntity(LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, int createdBy, int updatedBy, int deletedBy, FoodStatus status) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -22,10 +32,6 @@ public abstract class BaseEntity {
         this.deletedBy = deletedBy;
         this.status = status;
     }
-
-    public BaseEntity() {
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -81,4 +87,6 @@ public abstract class BaseEntity {
     public void setStatus(FoodStatus status) {
         this.status = status;
     }
+
+    public abstract String getNamefood();
 }
